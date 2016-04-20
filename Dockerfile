@@ -35,6 +35,8 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" >/etc/apt/sou
     libssl-dev \
     libffi-dev \
     build-essential \
+    ffmpeg \
+    mediainfo \
     locales \
     && apt-get install -yqq -t jessie-backports python-requests \
     && sed -i 's/^# en_US.UTF-8 UTF-8$/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
@@ -45,6 +47,7 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" >/etc/apt/sou
     && pip install cryptography \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
+    && pip install suds-jurko \
     && pip install pyasn1 \
     && pip install airflow==${AIRFLOW_VERSION} \
     && pip install airflow[celery]==${AIRFLOW_VERSION} \

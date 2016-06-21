@@ -48,6 +48,7 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" >/etc/apt/sou
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
     && pip install suds-jurko \
+    && pip install pysftp==0.2.8 \
     && pip install pyasn1 \
     && pip install airflow==${AIRFLOW_VERSION} \
     && pip install airflow[celery]==${AIRFLOW_VERSION} \

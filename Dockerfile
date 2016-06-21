@@ -47,9 +47,11 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" >/etc/apt/sou
     && pip install cryptography \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
-    && pip install suds-jurko \
-    && pip install pysftp==0.2.8 \
     && pip install pyasn1 \
+    && pip install pymediainfo==2.1.4 \
+    && pip install pysftp==0.2.8 \
+    && pip install suds-jurko==0.6 \
+    && pip install untangle==1.1.0 \
     && pip install airflow==${AIRFLOW_VERSION} \
     && pip install airflow[celery]==${AIRFLOW_VERSION} \
     && pip install airflow[mysql]==${AIRFLOW_VERSION} \

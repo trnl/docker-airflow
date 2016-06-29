@@ -12,19 +12,28 @@ This repository contains **Dockerfile** of [airflow](https://github.com/airbnb/a
 
 ## Installation
 
-        docker pull puckel/docker-airflow
+    docker pull trnl/docker-airflow
 
 ## Build
 
 For example, if you need to install [Extra Packages](http://pythonhosted.org/airflow/installation.html#extra-package), edit the Dockerfile and than build-it.
 
-        docker build --rm -t puckel/docker-airflow .
+    docker build --rm -t trnl/docker-airflow .
+        
+**NOTE**: Airflow is installed from the **private** [airflow-core](https://github.com/LibertyGlobal/airflow-core) repository.
+To build Docker image make sure you have ssh access to this private repository.
+Before building the image copy your private ssh key into current repository (it will be used to
+install the **airflow-core** repository).
+
+    cp ~/.ssh/id_rsa <curr_repo_path>
+
+Private ssh key is removed automatically upon a successful image build.
 
 # Usage
 
 Start the stack (mysql, rabbitmq, airflow-webserver, airflow-scheduler airflow-flower & airflow-worker) :
 
-        docker-compose up -d
+    docker-compose up -d
 
 If you want to use Ad hoc query, make sure you've configured connections :
 Go to Admin -> Connections and Edit "mysql_default" set this values (equivalent to values in airflow.cfg/docker-compose.yml) :
@@ -46,7 +55,7 @@ Check [Airflow Documentation](http://pythonhosted.org/airflow/)
 
 ## Run the test "tutorial"
 
-        docker exec dockerairflow_webserver_1 airflow backfill tutorial -s 2015-05-01 -e 2015-06-01
+    docker exec dockerairflow_webserver_1 airflow backfill tutorial -s 2015-05-01 -e 2015-06-01
 
 # Wanna help?
 

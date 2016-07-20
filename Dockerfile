@@ -55,13 +55,14 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" >/etc/apt/sou
     && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
     && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
     && pip install --upgrade pip \
-    && pip install pytz==2015.7 \
     && pip install cryptography \
-    && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
     && pip install pyasn1 \
     && pip install pymediainfo==2.1.4 \
+    && pip install pyOpenSSL \
     && pip install pysftp==0.2.8 \
+    && pip install PySmbClient==0.1.3 \
+    && pip install pytz==2015.7 \
     && pip install suds-jurko==0.6 \
     && pip install untangle==1.1.0 \
     && pip install ${AIRFLOW_REPO}@${AIRFLOW_BRANCH}#egg=airflow \

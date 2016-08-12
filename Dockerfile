@@ -11,7 +11,7 @@ MAINTAINER Puckel_
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
 ENV AIRFLOW_REPO git+ssh://git@github.com/LibertyGlobal/airflow-core.git
-ENV AIRFLOW_BRANCH develop
+ENV AIRFLOW_BRANCH 1.7.1.3_dev
 ENV AIRFLOW_HOME /usr/local/airflow
 
 # Define en_US.

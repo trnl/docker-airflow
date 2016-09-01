@@ -10,7 +10,7 @@ MAINTAINER Puckel_
 # Never prompts the user for choices on installation/configuration of packages
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
-ENV AIRFLOW_REPO git+ssh://git@github.com/LibertyGlobal/airflow-core.git
+ENV AIRFLOW_REPO git+ssh://git@github.com/LibertyGlobal/airflow.git
 ENV AIRFLOW_BRANCH 1.7.1.3_dev
 ENV AIRFLOW_HOME /usr/local/airflow
 

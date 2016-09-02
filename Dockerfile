@@ -62,6 +62,7 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" >/etc/apt/sou
     && pip install pymediainfo==2.1.4 \
     && pip install pyOpenSSL \
     && pip install pysftp==0.2.8 \
+    && pip install pysmb==1.1.18 \
     && pip install PySmbClient==0.1.3 \
     && pip install pytz==2015.7 \
     && pip install suds-jurko==0.6 \
